@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent()}} Ajout d'un utilisateur {% endblock %}
+
+{% block contenu %}
+    {{ form_start(form) }}    
+    {{ form_errors(form) }}    
+    <div class="form-group"> 
+        {{ form_label(form.nom, 'Nom:', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">      
+            {{ form_errors(form.nom) }}      
+            {{ form_widget(form.nom) }}     
+            {{ form_help(form.nom) }}      
+        </div>  
+    </div>
+    <div class="form-group"> 
+        {{ form_label(form.prenom, 'Prénom:', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}   
+        <div class="col-sm-10">  
+            {{ form_errors(form.prenom) }}       
+            {{ form_widget(form.prenom) }}    
+            {{ form_help(form.prenom) }}   
+        </div>    
+    </div>  
+    <div class="form-group">      
+        {{  form_label(form.datenaiss,  'Date  de  naissance:',  {'label_attr':  {'class':  'col-sm-2control-label'}}) }}    
+        <div class="col-sm-10">       
+            {{ form_errors(form.datenaiss) }}    
+            {{ form_widget(form.datenaiss) }}   
+            {{ form_help(form.datenaiss) }}   
+        </div>  
+    </div>  
+    <div class="form-group">     
+        {{ form_label(form.dateins, 'Date inscription:', {'label_attr': {'class': 'col-sm-2control-label'}}) }}  
+        <div class="col-sm-10">     
+            {{ form_errors(form.dateins) }}   
+            {{ form_widget(form.dateins) }}    
+            {{ form_help(form.dateins) }}   
+        </div>  
+    </div>  
+    <div class="form-group">  
+        <div class="col-sm-offset-2 col-sm-10">     
+            {{ form_widget(form.save) }}
+        </div>  
+    </div> 
+    {{ form_end(form) }}
+
+{% endblock %}

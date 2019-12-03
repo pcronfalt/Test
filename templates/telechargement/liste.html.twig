@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} Liste des téléchargements {% endblock %}
+
+{% block contenu %}    
+    <h1> Liste des téléchargements </h1>    
+    {% if not listeTelechargements is empty %} 
+        <table class="table">    
+            <tr>
+                <th>Libelle</th>
+            </tr>     
+            {% for key,value in listeTelechargements %}      
+                <tr>
+                    <td>{{ value.nb }}</td>
+                </tr>     
+            {% endfor %}    
+        </table>
+    {% else %}    
+        Aucun téléchargement à afficher
+    {% endif %}
+{% endblock %}

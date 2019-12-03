@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} Liste des fichiers {% endblock %}
+
+{% block contenu %}    
+    <h1> Liste des fichiers </h1>    
+    {% if not listeFichiers is empty %} 
+        <table class="table">    
+            <tr>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Extension</th>
+                <th>Taille</th>
+                <th>Utilisateur</th>
+            </tr>     
+            {% for key,value in listeUtilisateurs %}      
+                <tr>
+                    <td>{{ value.nom }}</td>
+                    <td>{{ value.date|date("d/m/Y") }}</td>
+                    <td>{{ value.extension }}</td>
+                    <td>{{ value.taille }}</td>
+                    <td>{{ value.utilisateur_id }}</td>
+                </tr>     
+            {% endfor %}    
+        </table>
+    {% else %}    
+        Aucun fichier à afficher
+    {% endif %}
+{% endblock %}

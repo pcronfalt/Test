@@ -29,7 +29,7 @@ class Logiciel
     private $version;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Affecter", mappedBy="Logiciel")
+     * @ORM\OneToMany(targetEntity="App\Entity\Affecter", mappedBy="logiciel")
      */
     private $affecters;
 

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent()}} Ajout d'un logiciel {% endblock %}
+
+{% block contenu %}
+    {{ form_start(form) }}    
+    {{ form_errors(form) }}    
+    <div class="form-group"> 
+        {{ form_label(form.nom, 'Nom:', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">      
+            {{ form_errors(form.nom) }}      
+            {{ form_widget(form.nom) }}     
+            {{ form_help(form.nom) }}      
+        </div>  
+    </div>
+    <div class="form-group"> 
+        {{ form_label(form.version, 'Prénom:', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}   
+        <div class="col-sm-10">  
+            {{ form_errors(form.version) }}       
+            {{ form_widget(form.version) }}    
+            {{ form_help(form.version) }}   
+        </div>    
+    </div>  
+ 
+    <div class="form-group">  
+        <div class="col-sm-offset-2 col-sm-10">     
+            {{ form_widget(form.save) }}
+        </div>  
+    </div> 
+    {{ form_end(form) }}
+
+{% endblock %}

@@ -36,7 +36,7 @@ class Affecter
      * @ORM\ManyToOne(targetEntity="App\Entity\Logiciel", inversedBy="affecters")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $Logiciel;
+    private $logiciel;
 
     public function getId(): ?int
     {
@@ -81,12 +81,12 @@ class Affecter
 
     public function getLogiciel(): ?Logiciel
     {
-        return $this->Logiciel;
+        return $this->logiciel;
     }
 
-    public function setLogiciel(?Logiciel $Logiciel): self
+    public function setLogiciel(?Logiciel $logiciel): self
     {
-        $this->Logiciel = $Logiciel;
+        $this->logiciel = $logiciel;
 
         return $this;
     }

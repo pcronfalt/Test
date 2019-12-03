@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent()}} Ajout d'un téléchargement {% endblock %}
+
+{% block contenu %}
+    {{ form_start(form) }}    
+    {{ form_errors(form) }}    
+    <div class="form-group"> 
+        {{ form_label(form.nb, 'NB:', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">      
+            {{ form_errors(form.nb) }}      
+            {{ form_widget(form.nb) }}     
+            {{ form_help(form.nb) }}      
+        </div>  
+    </div>
+    <div class="form-group"> 
+        {{ form_label(form.utilisateur_id, 'utilisateur_id:', {'label_attr': {'class': 'col-sm-2 control-label'}}) }}   
+        <div class="col-sm-10">  
+            {{ form_errors(form.utilisateur_id) }}       
+            {{ form_widget(form.utilisateur_id) }}    
+            {{ form_help(form.utilisateur_id) }}   
+        </div>    
+    </div>  
+    <div class="form-group">      
+        {{  form_label(form.fichier_id,  'fichier_id:',  {'label_attr':  {'class':  'col-sm-2control-label'}}) }}    
+        <div class="col-sm-10">       
+            {{ form_errors(form.fichier_id) }}    
+            {{ form_widget(form.fichier_id) }}   
+            {{ form_help(form.fichier_id) }}   
+        </div>  
+    </div>  
+    <div class="form-group">  
+        <div class="col-sm-offset-2 col-sm-10">     
+            {{ form_widget(form.save) }}
+        </div>  
+    </div> 
+    {{ form_end(form) }}
+
+{% endblock %}

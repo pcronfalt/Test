@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent()}} Liste des users {% endblock %}
+{% block contenu %}   
+    <h1> Liste des users </h1>    
+    {% if not listeUsers is empty %} 
+        {{ form_start(form)}} 
+        <table class="table">    <tr><th>Nom</th><th>Prénom</th><th></th></tr> 
+
+            {% for key,value in listeUsers %}      
+                <tr><td><a href="{{ path('user_modifier',{'id':value.id})}}">{{ value.nom }}</a></td><td>{{ value.prenom }}</td><td><input type="checkbox" name="cocher[]" value="{{ value.id }}"/></td></tr>   
+                    {% endfor %}   
+        </table>
+        {{ form_end(form)}}
+    {% else %} 
+        Aucun user à afficher
+    {% endif %}
+{% endblock %}

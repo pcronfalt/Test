@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ parent()}} Liste des logiciels {% endblock %}
+{% block contenu %}   
+    <h1> Liste des logiciels </h1>    
+    {% if not listeLogiciels is empty %} 
+        {{ form_start(form)}} 
+        <table class="table">    <tr><th>Nom</th><th>Version</th><th></th></tr> 
+
+            {% for key,value in listeLogiciels %}      
+                <tr><td><a href="{{ path('logiciel_modifier',{'id':value.id})}}">{{ value.nom }}</a></td><td>{{ value.version }}</td><td><input type="checkbox" name="cocher[]" value="{{ value.id }}"/></td></tr>   
+                    {% endfor %}   
+        </table>
+        {{ form_end(form)}}
+    {% else %} 
+        Aucun logiciel à afficher
+    {% endif %}
+{% endblock %}
